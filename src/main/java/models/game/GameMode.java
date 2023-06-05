@@ -1,4 +1,4 @@
-package battleship.model.game;
+package models.game;
 
 import java.util.EnumSet;
 

@@ -1,6 +1,6 @@
-package battleship.model.game.ocean;
+package models.game.ocean;
 
-import battleship.model.ships.Ship;
+import models.ships.Ship;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +64,7 @@ public class Ocean {
     }
 
     /**
-     * @param pos position to check
+     * @param pos position to cheching
      * @return true if it is empty, otherwise false.
      */
     public boolean isEmpty(Point pos) {
@@ -109,69 +109,69 @@ public class Ocean {
         for (Point point : positionRange) {
             switch (direction) {
                 case UP -> {
-                    // if this is the beginning of the ship, check below, down and right and down and left
+                    // if this is the beginning of the ship, cheching below, down and right and down and left
                     if (point.equals(startPos) && (getShipByPosition(point.getDown()) != null ||
                             getShipByPosition(point.getDownAndLeft()) != null ||
                             getShipByPosition(point.getDownAndRight()) != null))
                         return true;
 
-                    // if this is the end of the ship, check up, up and to the right and up and to the left
+                    // if this is the end of the ship, cheching up, up and to the right and up and to the left
                     if (point.equals(endPos) && (getShipByPosition(point.getUp()) != null ||
                             getShipByPosition(point.getUpAndRight()) != null ||
                             getShipByPosition(point.getUpAndLeft()) != null))
                         return true;
 
-                    // check left and right
+                    // cheching left and right
                     if (getShipByPosition(point.getLeft()) != null || getShipByPosition(point.getRight()) != null)
                         return true;
                 }
                 case DOWN -> {
-                    // if this is the beginning of the ship, check up, up and to the right and up and to the left
+                    // if this is the beginning of the ship, cheching up, up and to the right and up and to the left
                     if (point.equals(startPos) && (getShipByPosition(point.getUp()) != null ||
                             getShipByPosition(point.getUpAndRight()) != null ||
                             getShipByPosition(point.getUpAndLeft()) != null))
                         return true;
 
-                    // if this is the end of the ship, check below, down and right and down and left
+                    // if this is the end of the ship, cheching below, down and right and down and left
                     if (point.equals(endPos) && (getShipByPosition(point.getDown()) != null ||
                             getShipByPosition(point.getDownAndLeft()) != null ||
                             getShipByPosition(point.getDownAndRight()) != null))
                         return true;
 
-                    // check left and right
+                    // cheching left and right
                     if (getShipByPosition(point.getLeft()) != null || getShipByPosition(point.getRight()) != null)
                         return true;
                 }
                 case LEFT -> {
-                    // if this is the beginning of the ship, check right, right and down and right and up
+                    // if this is the beginning of the ship, cheching right, right and down and right and up
                     if (point.equals(startPos) && (getShipByPosition(point.getRight()) != null ||
                             getShipByPosition(point.getUpAndRight()) != null ||
                             getShipByPosition(point.getDownAndRight()) != null))
                         return true;
 
-                    // if this is the end of the ship, check left, left and down and right and up
+                    // if this is the end of the ship, cheching left, left and down and right and up
                     if (point.equals(endPos) && (getShipByPosition(point.getLeft()) != null ||
                             getShipByPosition(point.getUpAndLeft()) != null ||
                             getShipByPosition(point.getDownAndLeft()) != null))
                         return true;
-                    // check from above and below
+                    // cheching from above and below
                     if (getShipByPosition(point.getUp()) != null || getShipByPosition(point.getDown()) != null)
                         return true;
                 }
                 case RIGHT -> {
-                    // if this is the beginning of the ship, check left, left and down and right and up
+                    // if this is the beginning of the ship, cheching left, left and down and right and up
                     if (point.equals(startPos) && (getShipByPosition(point.getLeft()) != null ||
                             getShipByPosition(point.getUpAndLeft()) != null ||
                             getShipByPosition(point.getDownAndLeft()) != null))
                         return true;
 
-                    // if this is the end of the ship, check right, right and down and right and up
+                    // if this is the end of the ship, cheching right, right and down and right and up
                     if (point.equals(endPos) && (getShipByPosition(point.getRight()) != null ||
                             getShipByPosition(point.getUpAndRight()) != null ||
                             getShipByPosition(point.getDownAndRight()) != null))
                         return true;
 
-                    // check from above and below
+                    // cheching from above and below
                     if (getShipByPosition(point.getUp()) != null || getShipByPosition(point.getDown()) != null)
                         return true;
                 }

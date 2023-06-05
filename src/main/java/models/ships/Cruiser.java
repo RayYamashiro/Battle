@@ -1,7 +1,7 @@
-package battleship.model.ships;
+package models.ships;
 
 public class Cruiser extends Ship {
-    private static final int MAX_HEALTH = 3;
+    public static int MAX_HEALTH = 3;
 
     public Cruiser() {
         super(MAX_HEALTH);
@@ -16,6 +16,9 @@ public class Cruiser extends Ship {
         health = MAX_HEALTH;
     }
 
+    public static void setHealth(int maxHealth) {
+        MAX_HEALTH = maxHealth;
+    }
     /**
      * @return max length
      */
@@ -31,4 +34,5 @@ public class Cruiser extends Ship {
     public String toString() {
         return "Cruiser";
     }
+
 }

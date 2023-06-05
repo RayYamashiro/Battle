@@ -1,7 +1,8 @@
-package battleship.model.ships;
+package models.ships;
 
-import battleship.model.game.FiringMode;
-import battleship.model.game.HealthReport;
+import models.game.FiringMode;
+import models.game.HealthReport;
+import models.shipsbuilder.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,19 +50,10 @@ public abstract class Ship {
      * @param counters Array of integers.
      * @return List of the ships (sorted by length descending)
      */
-    public static List<Ship> convertInputIntegersToShips(int[] counters) {
-        List<Ship> ships = new ArrayList<>();
-        for (int i = 0; i < counters.length; i++) {
-            for (int j = 0; j < counters[i]; j++) {
-                switch (i) {
-                    case 0 -> ships.add(new Carrier());
-                    case 1 -> ships.add(new Battleship());
-                    case 2 -> ships.add(new Cruiser());
-                    case 3 -> ships.add(new Destroyer());
-                    case 4 -> ships.add(new Submarine());
-                }
-            }
-        }
-        return ships;
-    }
+
+
+
+
+
+
 }

@@ -1,10 +1,10 @@
-package battleship.model.game.user;
+package models.game.user;
 
-import battleship.model.game.AttackReport;
-import battleship.model.game.FiringMode;
-import battleship.model.game.Game;
-import battleship.model.game.ocean.Point;
-import battleship.model.ships.Ship;
+import models.game.AttackReport;
+import models.game.FiringMode;
+import models.game.Game;
+import models.game.ocean.Point;
+import models.ships.Ship;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -112,14 +112,14 @@ public class User implements StatusChangedListener {
             lastReports = new ArrayList<>(new LinkedHashSet<>(lastReports));
 
             // restore health fleet in amount of the lastReports list size
-            currentSession.restorePreviousHealthFleet(lastReports.size());
+            currentSession.recoveryStrategy.restorePreviousHealthFleet(lastReports.size());
 
             // restore ship health
             lastReports.get(0).getShip().restoreHealthInRecoveryMode();
 
             // update points to recover (controller will update view if points not null)
             List<Point> pointsToRecover = lastReports.stream().map(AttackReport::getPosition).collect(Collectors.toList());
-            currentSession.updatePointsToRecover(pointsToRecover);
+            currentSession.recoveryStrategy.updatePointsToRecover(pointsToRecover);
         }
     }
 }

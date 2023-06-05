@@ -5,12 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cb2d22c-bf27-4189-bd83-3d1719a754b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/game/RecoveryStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/BattleshipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/BattleshipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/AttackReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/AttackReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/FiringMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/FiringMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/GameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/GameMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/GameStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/GameStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/HealthReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/HealthReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/TorpedoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/TorpedoStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/ocean/Ocean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/ocean/Ocean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/ocean/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/ocean/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/ocean/ShipPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/ocean/ShipPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/user/StatusChangedListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/user/StatusChangedListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/game/user/UserState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/game/user/UserState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Battleship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Carrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Cruiser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Cruiser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Destroyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/ships/Submarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/ships/Submarine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/BattleshipBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/BattleshipBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/CarrierBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/CarrierBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/CruiserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/CruiserBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/DestroyerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/DestroyerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/Director.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/ShipBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/ShipBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/SubmarineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/shipsbuilder/SubmarineBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/BattleshipView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/BattleshipView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/matrixprinter/PrettyMatrixPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/matrixprinter/PrettyMatrixPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/matrixprinter/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/matrixprinter/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/oceanview/OceanView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/oceanview/OceanView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/oceanview/ShipCellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/oceanview/ShipCellView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,14 +65,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/RayYamashiro/IdeaProjects/Battle/src/main/java/models&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RayYamashiro\IdeaProjects\Battle\src\main\java\models" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,8 +92,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685572494027</updated>
-      <workItem from="1685572495166" duration="1000" />
+      <workItem from="1685572495166" duration="3947000" />
+      <workItem from="1685607555450" duration="3000" />
+      <workItem from="1685610999565" duration="23000" />
+      <workItem from="1685925733855" duration="6585000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

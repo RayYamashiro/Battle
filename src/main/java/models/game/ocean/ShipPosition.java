@@ -1,6 +1,6 @@
-package battleship.model.game.ocean;
+package models.game.ocean;
 
-import battleship.model.ships.Ship;
+import models.ships.Ship;
 
 import java.util.Random;
 

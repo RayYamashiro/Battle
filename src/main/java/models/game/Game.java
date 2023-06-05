@@ -1,9 +1,10 @@
-package battleship.model.game;
+package models.game;
 
-import battleship.model.game.ocean.Ocean;
-import battleship.model.game.ocean.Point;
-import battleship.model.game.user.StatusChangedListener;
-import battleship.model.ships.Ship;
+import models.game.ocean.Ocean;
+import models.game.ocean.Point;
+import models.game.user.StatusChangedListener;
+import models.ships.Ship;
+import models.shipsbuilder.*;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -14,6 +15,9 @@ public class Game {
     private int fleetHealth;
     private int availableTorpedo;
     private EnumSet<GameMode> gameMode;
+
+    public TorpedoStrategy torpedoStrategy = new TorpedoStrategy();
+    public RecoveryStrategy recoveryStrategy = new RecoveryStrategy(fleetHealth);
 
     /**
      * Create new game.
@@ -37,14 +41,7 @@ public class Game {
         // if mode == null: game without torpedo mode and recovery mode.
         gameMode = mode;
 
-        if (!gameMode.contains(GameMode.TORPEDO_MODE_ENABLE) && torpedoCounter > 0) {
-            throw new IllegalArgumentException("ERROR: Game mode isn't TORPEDO_MODE_ENABLE, but torpedoCounter = " + torpedoCounter);
-        }
-
-        if (gameMode.contains(GameMode.TORPEDO_MODE_ENABLE)) {
-            if (torpedoCounter <= 0) {
-                throw new IllegalArgumentException("ERROR: Game mode is TORPEDO_MODE_ENABLE, but torpedoCounter = " + torpedoCounter);
-            }
+        if( torpedoStrategy.checkMode(gameMode , torpedoCounter)) {
             availableTorpedo = torpedoCounter;
         } else {
             availableTorpedo = 0;
@@ -71,7 +68,7 @@ public class Game {
      * @throws RuntimeException if ocean size is too small for the input specified fleet
      */
     public void placeShipsOnOcean(int[] counters) throws RuntimeException {
-        List<Ship> ships = Ship.convertInputIntegersToShips(counters);
+        List<Ship> ships = convertInputIntegersToShips(counters);
         fleetHealth = ships.stream().mapToInt(Ship::getLength).sum();
 
         // Fleet size bigger than ocean size
@@ -83,6 +80,38 @@ public class Game {
             throw new RuntimeException("Cannot place ships on this ocean");
     }
 
+    public static List<Ship> convertInputIntegersToShips(int[] counters) {
+        List<Ship> ships = new ArrayList<>();
+
+        for (int i = 0; i < counters.length; i++) {
+            for (int j = 0; j < counters[i]; j++) {
+                ShipBuilder builder;
+                switch (i) {
+                    case 0:
+                        builder = new CarrierBuilder();
+                        ships.add(Director.manage(builder));
+                        break;
+                    case 1:
+                        builder = new BattleshipBuilder();
+                        ships.add(Director.manage(builder));
+                        break;
+                    case 2:
+                        builder = new CruiserBuilder();
+                        ships.add(Director.manage(builder));
+                        break;
+                    case 3:
+                        builder = new DestroyerBuilder();
+                        ships.add(Director.manage(builder));
+                        break;
+                    case 4:
+                        builder = new SubmarineBuilder();
+                        ships.add(Director.manage(builder));
+                        break;
+                }
+            }
+        }
+        return ships;
+    }
     private final List<StatusChangedListener> listeners = new ArrayList<>();
 
     /**
@@ -99,7 +128,7 @@ public class Game {
      *
      * @param report report of current attack
      */
-    private void changeStatus(AttackReport report) {
+    protected void changeStatus(AttackReport report) {
         for (StatusChangedListener user : listeners)
             user.onStatusChanged(report);
     }
@@ -145,43 +174,5 @@ public class Game {
         return report;
     }
 
-    /**
-     * Only for ship recovery mode.
-     */
-    private List<Point> pointsToRecover;
 
-    /**
-     * Restore fleet health. (only for ship recovery mode).
-     *
-     * @param healthScoresToAdd health scores to add
-     */
-    public void restorePreviousHealthFleet(int healthScoresToAdd) {
-        fleetHealth += healthScoresToAdd;
-    }
-
-    /**
-     * Update list of points to recover (only for ship recovery mode).
-     *
-     * @param points list of points
-     */
-    public void updatePointsToRecover(List<Point> points) {
-        pointsToRecover = points;
-    }
-
-    /**
-     * (only for ship recovery mode)
-     *
-     * @return list of points to recover
-     */
-    public List<Point> getPointsToRecover() {
-        return pointsToRecover;
-    }
-
-    /**
-     * (only for ship recovery mode)
-     * Clear list.
-     */
-    public void clearPointsToRecover() {
-        pointsToRecover.clear();
-    }
 }

@@ -1,7 +1,7 @@
-package battleship.model.game;
+package models.game;
 
-import battleship.model.game.ocean.Point;
-import battleship.model.ships.Ship;
+import models.game.ocean.Point;
+import models.ships.Ship;
 
 import java.util.List;
 

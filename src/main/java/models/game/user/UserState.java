@@ -1,4 +1,4 @@
-package battleship.model.game.user;
+package models.game.user;
 
 /**
  * User state: attacking ship / general

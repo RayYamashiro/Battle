@@ -1,22 +1,23 @@
 package models.shipsbuilder;
 
-import models.ships.Carrier;
 
-public class SubmarineBuider extends ShipBuilderS{
+import models.ships.Submarine;
+
+public class SubmarineBuilder extends ShipBuilder{
     private int health;
 
-    public CarrierBuilder() {
-        this.health = Carrier.MAX_HEALTH;
+    public SubmarineBuilder() {
+        this.health = Submarine.MAX_HEALTH;
     }
 
-    public CarrierBuilder withHealth(int health) {
+    public SubmarineBuilder withHealth(int health) {
         this.health = health;
         return this;
     }
 
-    public Carrier build() {
-        Carrier carrier = new Carrier();
-        carrier.setHealth(this.health);
-        return carrier;
+    public Submarine build() {
+        Submarine submarine = new Submarine();
+        submarine.setHealth(this.health);
+        return submarine;
     }
 }

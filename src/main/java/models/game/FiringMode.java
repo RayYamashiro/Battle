@@ -1,4 +1,4 @@
-package battleship.model.game;
+package models.game;
 
 /**
  * Firing mode (Torpedo / general)

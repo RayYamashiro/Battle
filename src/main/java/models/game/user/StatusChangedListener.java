@@ -1,6 +1,6 @@
-package battleship.model.game.user;
+package models.game.user;
 
-import battleship.model.game.AttackReport;
+import models.game.AttackReport;
 
 public interface StatusChangedListener {
     /**

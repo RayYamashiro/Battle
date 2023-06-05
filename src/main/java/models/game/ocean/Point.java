@@ -1,4 +1,4 @@
-package battleship.model.game.ocean;
+package models.game.ocean;
 
 import java.util.Objects;
 

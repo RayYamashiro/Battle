@@ -1,4 +1,4 @@
-package battleship.model.game;
+package models.game;
 
 /**
  * Health report (contains ship health remaining, and power of attack).

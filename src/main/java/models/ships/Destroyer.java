@@ -1,7 +1,7 @@
-package battleship.model.ships;
+package models.ships;
 
 public class Destroyer extends Ship {
-    private static final int MAX_HEALTH = 2;
+    public static  int MAX_HEALTH = 2;
 
     public Destroyer() {
         super(MAX_HEALTH);
@@ -30,5 +30,9 @@ public class Destroyer extends Ship {
     @Override
     public String toString() {
         return "Destroyer";
+    }
+
+    public static void setHealth(int maxHealth) {
+        MAX_HEALTH = maxHealth;
     }
 }
